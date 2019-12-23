@@ -5,6 +5,15 @@ The goal is to evaluate the lyrics of the top 10 songs on the Billboard Hot 100 
 Libraries used:
 
 BeautifulSoup
+
 Numpy
+
 Pandas
+
 DateTime
+
+Nltk
+
+Re
+
+String
