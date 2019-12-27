@@ -1,54 +1,55 @@
-Title,Artist,Number of weeks in top ten,Year
-All I Want For Christmas Is You,Mariah Carey,8,2019
-Shallow,Lady Gaga and Bradley Cooper,7,2019
-Happier,Marshmello and Bastille,27,2019
-Sunflower,Post Malone and Swae Lee,33,2019
-Without Me,Halsey,29,2019
-High Hopes,Panic! at the Disco,15,2019
-Jingle Bell Rock,Bobby Helms,1,2019
-Rockin' Around the Christmas Tree,Brenda Lee,3,2019
-Holly Jolly Christmas,Burl Ives,2,2019
-Eastside,"Benny Blanco, Halsey and Khalid",2,2019
-Wow,Post Malone,24,2019
-7 Rings,Ariana Grande,16,2019
-Middle Child,J. Cole,10,2019
-"Break Up with Your Girlfriend, I'm Bored",Ariana Grande,2,2019
-Please Me,Cardi B and Bruno Mars,8,2019
-Thotiana,Blueface,2,2019
-Sucker,Jonas Brothers,22,2019
-Old Town Road,Lil Nas X featuring Billy Ray Cyrus1,26,2019
-Bad Guy,Billie Eilish,30,2019
-Better,Khalid,1,2019
-Dancing with a Stranger,Sam Smith and Normani,8,2019
-Boy with Luv,BTS featuring Halsey,1,2019
-Talk,Khalid,19,2019
-Me!,Taylor Swift featuring Brendon Urie,4,2019
-If I Can't Have You,Shawn Mendes,4,2019
-Homicide,Logic featuring Eminem,1,2019
-I Don't Care,Ed Sheeran and Justin Bieber,17,2019
-Sweet but Psycho,Ava Max,3,2019
-Suge,DaBaby,7,2019
-No Guidance,Chris Brown featuring Drake,23,2019
-You Need to Calm Down,Taylor Swift,2,2019
-Money in the Grave,Drake featuring Rick Ross,2,2019
-Señorita,Shawn Mendes and Camila Cabello,23,2019
-Truth Hurts,Lizzo,22,2019
-Goodbyes,Post Malone featuring Young Thug,12,2019
-Ransom,Lil Tecca,13,2019
-Boyfriend,Ariana Grande and Social House,1,2019
-Lover,Taylor Swift,1,2019
-Circles,Post Malone,15,2019
-Take What You Want,Post Malone featuring Ozzy Osbourne and Travis Scott,1,2019
-Someone You Loved,Lewis Capaldi,14,2019
-Panini,Lil Nas X,9,2019
-Highest in the Room,Travis Scott,3,2019
-"10,000 Hours",Dan + Shay and Justin Bieber,7,2019
-Bandit,Juice Wrld and YoungBoy Never Broke Again,1,2019
-Lose You to Love Me,Selena Gomez,6,2019
-Good as Hell,Lizzo,7,2019
-Follow God,Kanye West,1,2019
-Memories,Maroon 5,6,2019
-Everything I Wanted,Billie Eilish,1,2019
-Roxanne,Arizona Zervas,3,2019
-Heartless,The Weeknd,1,2019
-Dance Monkey,Tones and I,1,2019
+Top ten entry date,Title,Artist,Peak,Peak date,Number of weeks in top ten,Year
+December 30(2017),All I Want For Christmas Is You,Mariah Carey,1,December 21,9,2019
+October 20,Shallow,Lady Gaga and Bradley Cooper,1,March 9,7,2019
+October 20,Happier,Marshmello and Bastille,2,February 16,27,2019
+November 3,Sunflower,Post Malone and Swae Lee,1,January 19,33,2019
+November 10,Without Me,Halsey,1,January 12,29,2019
+November 24,High Hopes,Panic! at the Disco,4,January 26,15,2019
+January 5,Jingle Bell Rock,Bobby Helms,8,January 5,2,2019
+January 5,Rockin' Around the Christmas Tree,Brenda Lee,2,December 28,4,2019
+January 5,Holly Jolly Christmas,Burl Ives,6,December 28,3,2019
+January 19,Eastside,"Benny Blanco, Halsey and Khalid",9,January 19,2,2019
+January 26,Wow,Post Malone,2,April 6,24,2019
+February 2,7 Rings,Ariana Grande,1,February 2,16,2019
+February 9,Middle Child,J. Cole,4,February 9,10,2019
+February 23,"Break Up with Your Girlfriend, I'm Bored",Ariana Grande,2,February 23,2,2019
+March 2,Please Me,Cardi B and Bruno Mars,3,March 16,8,2019
+March 9,Thotiana,Blueface,8,April 6,2,2019
+March 16,Sucker,Jonas Brothers,1,March 16,22,2019
+April 13,Old Town Road,Lil Nas X featuring Billy Ray Cyrus1,1,April 13,26,2019
+April 13,Bad Guy,Billie Eilish,1,August 24,30,2019
+April 20,Better,Khalid,8,April 20,1,2019
+April 27,Dancing with a Stranger,Sam Smith and Normani,7,April 27,8,2019
+April 27,Boy with Luv,BTS featuring Halsey,8,April 27,1,2019
+May 4,Talk,Khalid,3,June 8,19,2019
+May 11,Me!,Taylor Swift featuring Brendon Urie,2,May 11,4,2019
+May 18,If I Can't Have You,Shawn Mendes,2,May 18,4,2019
+May 18,Homicide,Logic featuring Eminem,5,May 18,1,2019
+May 25,I Don't Care,Ed Sheeran and Justin Bieber,2,May 25,17,2019
+June 1,Sweet but Psycho,Ava Max,10,June 1,3,2019
+June 8,Suge,DaBaby,7,July 6,7,2019
+June 22,No Guidance,Chris Brown featuring Drake,5,October 5,23,2019
+June 29,You Need to Calm Down,Taylor Swift,2,June 29,2,2019
+June 29,Money in the Grave,Drake featuring Rick Ross,7,June 29,2,2019
+July 6,Señorita,Shawn Mendes and Camila Cabello,1,August 31,23,2019
+July 13,Truth Hurts,Lizzo,1,September 7,22,2019
+July 20,Goodbyes,Post Malone featuring Young Thug,3,July 20,12,2019
+August 10,Ransom,Lil Tecca,4,September 14,13,2019
+August 17,Boyfriend,Ariana Grande and Social House,8,August 17,1,2019
+September 7,Lover,Taylor Swift,10,September 7,1,2019
+September 14,Circles,Post Malone,1,November 30,16,2019
+September 21,Take What You Want,Post Malone featuring Ozzy Osbourne and Travis Scott,8,September 21,1,2019
+September 21,Someone You Loved,Lewis Capaldi,1,November 2,15,2019
+September 28,Panini,Lil Nas X,5,September 28,9,2019
+October 19,Highest in the Room,Travis Scott,1,October 19,3,2019
+October 19,"10,000 Hours",Dan + Shay and Justin Bieber,4,October 19,7,2019
+October 26,Bandit,Juice Wrld and YoungBoy Never Broke Again,10,October 26,1,2019
+November 9,Lose You to Love Me,Selena Gomez,1,November 9,6,2019
+November 9,Good as Hell,Lizzo,3,November 30,8,2019
+November 9,Follow God,Kanye West,7,November 9,1,2019
+November 16,Memories,Maroon 5,4,November 30,7,2019
+November 30,Everything I Wanted,Billie Eilish,8,November 30,1,2019
+December 7,Roxanne,Arizona Zervas,4,December 28,4,2019
+December 14,Heartless,The Weeknd,1,December 14,1,2019
+December 21,Dance Monkey,Tones and I,9,December 21,1,2019
+December 28,Futsal Shuffle 2020,Lil Uzi Vert,5,December 28,1,2019
