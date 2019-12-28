@@ -39,11 +39,11 @@ for i in range(init_year,int(now.year)+1):
         for td in tds:
             try:
                 if td.attrs['rowspan']:
-                    if drakecontingency == 0:
+                    if drakecontingency == 0 and int(td.attrs['rowspan']) > 1:
                         taylorswift = td.get_text()[:-1]
                         swiftcount = 8
                         drakecontingency = int(td.attrs['rowspan']) - 1
-                    else:
+                    elif int(td.attrs['rowspan']) > 1:
                         taylorswift2 = td.get_text()[:-1]
                         swiftcount2 = 7
                         drakecontingency2 = int(td.attrs['rowspan']) - 1
