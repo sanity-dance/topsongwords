@@ -23,8 +23,10 @@ for i in range(init_year,int(now.year)+1):
         my_table = soup.find('table',{'class':'wikitable sortable'})
 
         Titles = []
-        swiftcount = 0 # Keeps track of where repeat artists with rowspans greater than 1 should be inserted.
-        drakecontingency = 0 # Used to keep track of how many rows have the same artist when the rowspan is greater than 1.
+        swiftcount = 0 # Keeps track of where repeat information from cells with rowspans greater than 1 should be inserted.
+        drakecontingency = 0 # Used to keep track of how many times repeat information should be inserted.
+        swiftcount2 = 0 # Used in the rare case that two rowspan situations overlap.
+        drakecontingency2 = 0
 
         # The following code mines the first table found on the Wikipedia page and extracts all table elements other than the annotations column.
 
@@ -37,23 +39,45 @@ for i in range(init_year,int(now.year)+1):
         for td in tds:
             try:
                 if td.attrs['rowspan']:
-                    taylorswift = td.get_text()[:-1]
-                    swiftcount = 7
-                    drakecontingency = int(td.attrs['rowspan']) - 1
+                    if drakecontingency == 0:
+                        taylorswift = td.get_text()[:-1]
+                        swiftcount = 8
+                        drakecontingency = int(td.attrs['rowspan']) - 1
+                    else:
+                        taylorswift2 = td.get_text()[:-1]
+                        swiftcount2 = 7
+                        drakecontingency2 = int(td.attrs['rowspan']) - 1
             except KeyError:
                 pass
             if td.get_text()[0] != '[' and td.get_text()[0] and td.get_text()[0].strip(): # Drop annotations column.
+                if swiftcount > 0:
+                    swiftcount = swiftcount-1
                 if swiftcount == 1:
-                    drakecontingency = drakecontingency-1;
+                    drakecontingency = drakecontingency-1
                     # print(taylorswift + ' appended!')
                     Titles.append(taylorswift)
                     if drakecontingency == 0:
                         taylorswift = ''
                         swiftcount = 0
                     else:
-                        swiftcount = 6;
-                if swiftcount > 0:
-                    swiftcount = swiftcount-1;
+                        if drakecontingency2 == 0: # If there's an extra element being inserted before the next time this runs, insert it one sooner next time.
+                            swiftcount = 6
+                        else:
+                            swiftcount = 5
+                if swiftcount2 > 0:
+                    swiftcount2 = swiftcount2-1
+                if swiftcount2 == 1:
+                    drakecontingency2 = drakecontingency2-1
+                    # print(taylorswift2 + ' appended!')
+                    Titles.append(taylorswift2)
+                    if drakecontingency2 == 0:
+                        taylorswift2 = ''
+                        swiftcount2 = 0
+                    else:
+                        if drakecontingency == 0:
+                            swiftcount2 = 6
+                        else:
+                            swiftcount2 = 5
                 Titles.append(td.get_text()[:-1]) # Drop the newline character present at the end of every single entry.
 
         nptitles = np.asarray(Titles).copy()
