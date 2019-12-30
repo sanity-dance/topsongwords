@@ -12,13 +12,13 @@ from nltk.stem import PorterStemmer
 import os.path
 from os import path
 
-# The goal of this prototype is to use the code from the fetching prototype to iteratively read the lyrics of the entire 2019 table and append
+# The goal of this prototype is to use the code from the fetching prototype to iteratively read the lyrics of the entire 1958 table and append
 # the new information to the dataframe.
-if path.exists('data/2019top10songswordcounts.csv'): #This code block checks to see if the iterative fetcher has already gotten some results, and picks up where it left off rather than starting from the beginning each time.
-    songdata = pd.read_csv('data/2019top10songswordcounts.csv')
+if path.exists('data/1958top10songswordcounts.csv'): #This code block checks to see if the iterative fetcher has already gotten some results, and picks up where it left off rather than starting from the beginning each time.
+    songdata = pd.read_csv('data/1958top10songswordcounts.csv')
     init_index = int((songdata['Unique Words'] == 9999).idxmax())
 else:
-    songdata = pd.read_csv('data/2019top10songs.csv')
+    songdata = pd.read_csv('data/1958top10songs.csv')
     songdata['Unique Words'] = 9999
     songdata['Total Words'] = 9999
     init_index = 0
@@ -31,8 +31,8 @@ for i in range(init_index, len(songdata)):
     if int(songdata['Unique Words'][i]) != 9999: # If data has already been acquired for this entry, skip it and go to the next one.
         continue
     artist = songdata['Artist'][i] # artist1 and artist2 are the most common ways azlyrics represents artist names. artist1 removes spaces while artist2 replaces them with a dash.
-    artist1 = ''.join(artist.split()).lower().replace('\'','').replace('!','').replace('.','').replace('+','').replace('ñ','n').replace('é','e')
-    artist2 = artist.lower().replace('\'','').replace(' ','-').replace('!','').replace('.','').replace('+','').replace('ñ','n').replace('é','e')
+    artist1 = ''.join(artist.split()).lower().replace('\'','').replace('!','').replace('.','').replace('+','').replace('ñ','n').replace('é','e').replace('ö','o').replace('ü','u')
+    artist2 = artist.lower().replace('\'','').replace(' ','-').replace('!','').replace('.','').replace('+','').replace('ñ','n').replace('é','e').replace('ö','o').replace('ü','u')
     artistl = []
     if ', ' in artist: # Handles cases where there are three listed artists.
         artistl.append(artist1[:artist1.rfind(',')])
@@ -54,20 +54,27 @@ for i in range(init_index, len(songdata)):
         artistl.append(artist1)
         artistl.append(artist2)
         artistl.append(artist1[artist1.find('the')+3:]) # Handles a rare case where Wikipedia includes a "the" in the artist name and azlyrics does not.
-    title = ''.join(songdata['Title'][i].split()).lower().replace('\'','').replace(',','').replace('!','').replace('ñ','n').replace('é','e') # azlyrics seems to represent all song titles in the same way.
-    titlel = [title, 'a' + title, 'the' + title] # However, there are very rare cases, such as 'Holly Jolly Christmas', where azlyrics includes an 'a' or a 'the' at the beginning of a song and Wikipedia does not. These cases will only be tested if all of the artist configurations fail.
+    titlel = []
+    title = ''.join(songdata['Title'][i].split()).lower().replace('\'','').replace(',','').replace('.','').replace('!','').replace('?','').replace('ñ','n').replace('é','e') # azlyrics seems to represent all song titles in the same way.
+    titlel.append(title.replace('(','').replace(')','')) # Removal of parentheses is handled here because logic checks for parentheses in title later.
+    if 'Holly Jolly Christmas' in title: # Handles the Holly Jolly Christmas scenario.
+        titlel.append('a' + title)
     if 'futsal' in title:
         titlel.insert(0,'futsalshuffle') # Handles a unique case where the Wikipedia song title includes a number and the azlyrics song title does not.
-    success = False
+    if '(' in title: # Handles song titles with parenthetical alternate titles.
+        titlel.append(title[title.find('(')+1:title.rfind(')')])
+        titlel.append(title[:title.find('(')])
+        titlel.append(title[title.rfind(')'):])
+        success = False
     for j in range(len(titlel)):
         for k in range(len(artistl)):
             if requests.get(url + artistl[k] + '/' + titlel[j] + '.html').status_code == 200:
                 html = requests.get(url + artistl[k] + '/' + titlel[j] + '.html',cookies=cookies,headers=headers).text
                 soup = BeautifulSoup(html, 'lxml')
                 success = True
-                t.sleep(5)
+                t.sleep(3)
                 break
-            t.sleep(5)
+            t.sleep(3)
         if success: # Escapes the outer loop when URL succeeds without using a second request.
             break
         if j == len(titlel) - 1:
@@ -93,5 +100,5 @@ for i in range(init_index, len(songdata)):
         songdata['Total Words'][i] = len(my_text)
         print('Data on song ' + str(songdata['Title'][i]) + ' by artist ' + str(songdata['Artist'][i]) + ' successfully acquired!')
 
-songdata.to_csv(path_or_buf='data/2019top10songswordcounts.csv',index=False,mode='w+') # Export our complete data table for 2019.
+songdata.to_csv(path_or_buf='data/1958top10songswordcounts.csv',index=False,mode='w+') # Export our complete data table for 1958.
 print('Operation complete!')
