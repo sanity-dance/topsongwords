@@ -8,16 +8,22 @@ Libraries used:
 
 BeautifulSoup
 
-Numpy
+lyricsgenius
 
-Pandas
+NLTK
 
-DateTime
+numpy
 
-Nltk
+os
 
-Re
+pandas
 
-String
+re
 
-LyricsGenius
+requests
+
+string
+
+sys
+
+time

@@ -1,0 +1,66 @@
+Possible outlier detected: 16 Candles by artist The Crests at position 46
+Possible outlier detected: The All American Boy by artist Bill Parsons at position 50
+Song Kookie, Kookie (Lend Me Your Comb) by Edward Byrnes with Connie Stevens at position 73 not found!
+Possible outlier detected: Seven Little Girls Sitting in the Backseat by artist Paul Evans at position 118
+Possible outlier detected: The Big Hurt by artist Miss Toni Fisher at position 128
+Song Itsy Bitsy Teenie Weenie Yellow Polka Dot Bikini by Brian Hyland at position 186 not found!
+Possible outlier detected: Mr. Custer by artist Larry Verne at position 199
+Song Wooden Heart (Muss i denn) by Joe Dowell at position 288 not found!
+Possible outlier detected: As If I Didn't Know by artist Adam Wade at position 296
+Possible outlier detected: The Stripper by artist David Rose and His Orchestra at position 381
+Song Theme from Dr. Kildare (Three Stars Will Shine Tonight) by Richard Chamberlain at position 396 not found!
+Song The Cha-Cha-Cha by Bobby Rydell at position 431 not found!
+Possible outlier detected: Release Me by artist "Little Esther" Phillips at position 435
+Possible outlier detected: I Will Follow Him by artist Little Peggy March at position 469
+Possible outlier detected: Watermelon Man by artist Mongo Santamaría at position 475
+Possible outlier detected: The Reverend Mr. Black by artist The Kingston Trio at position 480
+Possible outlier detected: Memphis by artist Lonnie Mack at position 497
+Possible outlier detected: Wipe Out by artist The Surfaris at position 500
+Song (Down at) Papa Joe's by The Dixiebelles at position 541 not found!
+Possible outlier detected: Engine Engine Number 9 by artist Roger Miller at position 706
+Possible outlier detected: The Seventh Son by artist Johnny Rivers at position 712
+Song Ballad of the Green Berets by S/Sgt. Barry Sadler at position 787 not found!
+Possible outlier detected: Land of a Thousand Dances by artist Wilson Pickett at position 847
+Possible outlier detected: Come on Down to My Boat by artist Every Mother's Son at position 943
+Song An Open Letter to My Teenage Son by Victor Lundberg at position 986 not found!
+Possible outlier detected: Little Green Apples by artist O. C. Smith at position 1070
+Song In the Year 2525 (Exordium & Terminus) by Zager and Evans at position 1142 not found!
+Possible outlier detected: What Does It Take (To Win Your Love) by artist Junior Walker & the All Stars at position 1145
+Possible outlier detected: Thank You (Falettinme Be Mice Elf Agin)" / "Everybody Is a Star by artist Sly and the Family Stone at position 1198
+Possible outlier detected: American Woman" / "No Sugar Tonight by artist The Guess Who at position 1221
+Possible outlier detected: The Long and Winding Road" / "For You Blue by artist The Beatles at position 1233
+Possible outlier detected: O-o-h Child by artist Five Stairsteps at position 1246
+Possible outlier detected: Hey Girl"/"I Knew You When by artist Donny Osmond at position 1380
+Possible outlier detected: (If Loving You Is Wrong) I Don't Want to Be Right by artist Luther Ingram at position 1431
+Possible outlier detected: Rock and Roll Part 2 by artist Gary Glitter at position 1446
+Possible outlier detected: Convention '72 by artist The Delegates at position 1465
+Possible outlier detected: My Maria by artist B. W. Stevenson at position 1555
+Possible outlier detected: The Americans by artist Byron MacGregor at position 1585
+Possible outlier detected: Do It ('Til You're Satisfied) by artist B. T. Express at position 1670
+Possible outlier detected: Express by artist B. T. Express at position 1710
+Possible outlier detected: Philadelphia Freedom by artist The Elton John Band at position 1715
+Possible outlier detected: The Hustle by artist Van McCoy & the Soul City Symphony at position 1741
+Possible outlier detected: Dynomite by artist Bazuka at position 1753
+Song Believe It or Not (Theme from The Greatest American Hero) by Joey Scarbury at position 2253 not found!
+Possible outlier detected: After All (Love Theme from Chances Are) by artist Cher & Peter Cetera at position 3019
+Possible outlier detected: Power of Love/Love Power by artist Luther Vandross at position 3248
+Song Right Here/Human Nature" / "Downtown by SWV at position 3411 not found!
+Song How Do U Want It" / "California Love by 2Pac featuring K-Ci & JoJo / featuring Dr. Dre at position 3567 not found!
+Possible outlier detected: C'mon N' Ride It (The Train) by artist Quad City DJ's at position 3571
+Possible outlier detected: Been Around the World" / "It's All About the Benjamins by artist Puff Daddy featuring The Notorious B.I.G. and Mase at position 3644
+Possible outlier detected: No, No, No Part II by artist Destiny's Child featuring Wyclef Jean at position 3651
+Possible outlier detected: What's It Gonna Be?! by artist Busta Rhymes featuring Janet Jackson at position 3725
+Possible outlier detected: Lost in You by artist Chris Gaines at position 3754
+Possible outlier detected: Auld Lang Syne by artist Kenny G at position 3775
+Possible outlier detected: Independent Women Part I by artist Destiny's Child at position 3820
+Song I Need a Girl (Part Two) by P. Diddy featuring Tammy Ruggieri, Ginuwine, Loon, and Mario Winans at position 3914 not found!
+Song Tonight (I'm Fuckin'/Lovin' You) by Enrique Iglesias featuring Ludacris and DJ Frank E at position 4425 not found!
+Song Cups (Pitch Perfect's "When I'm Gone") by Anna Kendrick at position 4561 not found!
+Possible outlier detected: Rap God by artist Eminem at position 4576
+Possible outlier detected: Bad and Boujee by artist Migos featuring Lil Uzi Vert at position 4724
+Possible outlier detected: Fake Love by artist BTS at position 4806
+Possible outlier detected: Lucky You by artist Eminem featuring Joyner Lucas at position 4822
+Possible outlier detected: The Ringer by artist Eminem at position 4823
+Possible outlier detected: Mona Lisa by artist Lil Wayne featuring Kendrick Lamar at position 4827
+Possible outlier detected: Boy with Luv by artist BTS featuring Halsey at position 4859
+Operation complete! 15 songs missing!
