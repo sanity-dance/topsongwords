@@ -14,7 +14,7 @@ import string
 import sys
 import time as t
 
-genius = lyricsgenius.Genius("sOaPjAhBFOppLxYu934KMMmZOIS0cyk39gjQjw7rpgghxE_Ggcp7uUYGDc8svrvY") # You will need a Genius API access token in order to successfully fetch information from Genius.
+genius = lyricsgenius.Genius("<your key here>") # You will need a Genius API access token in order to successfully fetch information from Genius.
 genius.remove_section_headers = True
 genius.verbose = False
 
