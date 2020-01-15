@@ -8,6 +8,7 @@ import numpy as np
 import os.path
 from os import path
 import pandas as pd
+import random
 import re
 import requests
 import string
@@ -39,9 +40,9 @@ messagelog = []
 
 try:
     for i in range(init_index, len(songdata)):
-        if int(songdata['Unique Words'][i]) != 9999 or i in instrumentalindices: # If data has already been acquired for this entry, skip it and go to the next one.
+        if int(songdata.loc[i,'Unique Words']) != 9999 or i in instrumentalindices: # If data has already been acquired for this entry, skip it and go to the next one.
             continue
-        artist = songdata['Artist'][i] # artist1 and artist2 are the most common ways azlyrics represents artist names. artist1 removes spaces while artist2 replaces them with a dash.
+        artist = songdata.loc[i,'Artist'] # artist1 and artist2 are the most common ways azlyrics represents artist names. artist1 removes spaces while artist2 replaces them with a dash.
         artist1 = ''.join(artist.split()).lower().replace('\'','').replace('!','').replace('.','').replace('+','').replace('ñ','n').replace('é','e').replace('ö','o').replace('ü','u')
         artist2 = artist.lower().replace('\'','').replace(' ','-').replace('!','').replace('.','').replace('+','').replace('ñ','n').replace('é','e').replace('ö','o').replace('ü','u')
         artistl = []
@@ -77,7 +78,7 @@ try:
             if 'the' in artist:
                 artistl.append(artist1[artist1.find('the')+3:]) # Handles a rare case where Wikipedia includes a "the" in the artist name and azlyrics does not.
         titlel = []
-        title = ''.join(songdata['Title'][i].split()).lower().replace('\'','').replace(',','').replace('.','').replace('!','').replace('?','').replace('ñ','n').replace('é','e') # azlyrics seems to represent all song titles in the same way.
+        title = ''.join(songdata.loc[i,'Title'].split()).lower().replace('\'','').replace(',','').replace('.','').replace('!','').replace('?','').replace('ñ','n').replace('é','e') # azlyrics seems to represent all song titles in the same way.
         titlel.append(title.replace('(','').replace(')','')) # Removal of parentheses is handled here because logic checks for parentheses in title later.
         if 'Holly Jolly Christmas' in title: # Handles the Holly Jolly Christmas scenario.
             titlel.append('a' + title)
@@ -87,7 +88,7 @@ try:
             titlel.append(title[title.find('(')+1:title.rfind(')')])
             titlel.append(title[:title.find('(')])
             titlel.append(title[title.rfind(')'):])
-        if '\" / \"' in songdata['Title'][i]:
+        if '\" / \"' in songdata.loc[i,'Title']:
             titlel.append(title[:title.find('\"')])
             titlel.append(title[title.rfind('\"'):])
         success = False
@@ -126,26 +127,26 @@ try:
                     html = requests.get(url + artistl[k] + '/' + titlel[j] + '.html',cookies=cookies,headers=headers).text
                     soup = BeautifulSoup(html, 'lxml')
                     success = True
-                    t.sleep(5)
+                    t.sleep(random.randint(3,8))
                     break
-                t.sleep(5)
+                t.sleep(random.randint(3,8))
             if success: # Escapes the outer loop when URL succeeds without using a second request.
                 break
             if j == len(titlel) - 1:
-                print('Song ' + songdata['Title'][i] + ' by ' + artist + ' at position ' + str(i) + ' not found on azlyrics!')
+                print('Song ' + songdata.loc[i,'Title'] + ' by ' + artist + ' at position ' + str(i) + ' not found on azlyrics!')
         
         if success:
-            my_text = soup.find('div',attrs={'class': None}).text.replace('\n',' ').replace(',','')[3:] # Extract lyrics text from the azlyrics page and replace newlines with spaces. Also, eliminate the \r tag, space at the beginning, and commas.
+            my_text = re.sub(r'\[(.*?)\]','',soup.find('div',attrs={'class': None}).text.replace(',','')) # Extract lyrics text from the azlyrics page and replace commas and bracketed notes.
             token_text = word_tokenize(my_text)
-            token_text = [j.lower() for j in token_text if not re.fullmatch('[' + string.punctuation + ']+', j)] #Remove tokens that are just punctuation. This method preserves contractions like "n't".
+            token_text = [l.lower() for l in token_text if not re.fullmatch('[' + string.punctuation + ']+', l)] #Remove tokens that are just punctuation. This method preserves contractions like "n't".
         
         if success == False: # Use this method second because it is less precise and has a risk of returning false results.
             for l in range(len(geniusl)):
                 try:
-                    if genius.search_song(songdata['Title'][i],geniusl[l]) != None:
+                    if genius.search_song(songdata.loc[i,'Title'],geniusl[l]) != None:
                         while True:
                             try:
-                                currentsong = genius.search_song(songdata['Title'][i],geniusl[l])
+                                currentsong = genius.search_song(songdata.loc[i,'Title'],geniusl[l])
                                 t.sleep(1)
                                 break
                             except:
@@ -154,11 +155,11 @@ try:
                         t.sleep(3)
                         break
                     t.sleep(3)
-                    if '\" / \"' in songdata['Title'][i]:
-                        if genius.search_song(songdata['Title'][i][songdata[1:'Title'][i].find('\"')],geniusl[l]) != None:
+                    if '\" / \"' in songdata.loc[i,'Title']:
+                        if genius.search_song(songdata.loc[i,'Title'][songdata[1:'Title'][i].find('\"')],geniusl[l]) != None:
                             while True:
                                 try:
-                                    currentsong = genius.search_song(songdata['Title'][i][songdata['Title'][i].find('\"'):],geniusl[l])
+                                    currentsong = genius.search_song(songdata.loc[i,'Title'][songdata.loc[i,'Title'].find('\"'):],geniusl[l])
                                     t.sleep(1)
                                     break
                                 except:
@@ -169,12 +170,12 @@ try:
                 except:
                     continue
             if success == True:
-                my_text = currentsong.lyrics.replace(',','') # Removes commas.
+                my_text = re.sub(r'\[(.*?)\]','',currentsong.lyrics.replace(',','')) # Removes commas and bracketed notes.
                 token_text = word_tokenize(my_text)
-                token_text = [i.lower() for i in token_text if not re.fullmatch('[' + string.punctuation + ']+', i)] #Remove tokens that are just punctuation.
+                token_text = [l.lower() for l in token_text if not re.fullmatch('[' + string.punctuation + ']+', l)] #Remove tokens that are just punctuation.
 
         if success == False:
-            failmessage = 'Song ' + songdata['Title'][i] + ' by ' + artist + ' at position ' + str(i) + ' not found!'
+            failmessage = 'Song ' + songdata.loc[i,'Title'] + ' by ' + artist + ' at position ' + str(i) + ' not found!'
             print(failmessage)
             messagelog.append(failmessage)
             failcount += 1
@@ -183,12 +184,12 @@ try:
             stem_text = []
             for k in range(len(token_text)):
                 stem_text.append(port_stem.stem(token_text[k]))
-            songdata['Unique Words'][i] = len(set(stem_text))
-            songdata['Total Words'][i] = len(token_text)
-            songdata['Lyrics'][i] = my_text.replace('\n',' ')
-            print('Data on song ' + str(songdata['Title'][i]) + ' by artist ' + str(songdata['Artist'][i]) + ' successfully acquired! ' + str(len(set(stem_text))) + ' ' + str(len(token_text)))
+            songdata.loc[i,'Unique Words'] = len(set(stem_text))
+            songdata.loc[i,'Total Words'] = len(token_text)
+            songdata.loc[i,'Lyrics'] = my_text
+            print('Data on song ' + str(songdata.loc[i,'Title']) + ' by artist ' + str(songdata.loc[i,'Artist']) + ' successfully acquired! ' + str(len(set(stem_text))) + ' ' + str(len(token_text)))
             if len(token_text) > 1200 or len(set(stem_text)) < 5:
-                warningmessage = 'Possible outlier detected: ' + str(songdata['Title'][i]) + ' by artist ' + str(songdata['Artist'][i]) + ' at position ' + str(i)
+                warningmessage = 'Possible outlier detected: ' + str(songdata.loc[i,'Title']) + ' by artist ' + str(songdata.loc[i,'Artist']) + ' at position ' + str(i)
                 print(warningmessage)
                 messagelog.append(warningmessage)
 except:
