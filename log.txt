@@ -7,18 +7,17 @@ Song Itsy Bitsy Teenie Weenie Yellow Polka Dot Bikini by Brian Hyland at positio
 Possible outlier detected: Mr. Custer by artist Larry Verne at position 199
 Song Wooden Heart (Muss i denn) by Joe Dowell at position 288 not found!
 Possible outlier detected: As If I Didn't Know by artist Adam Wade at position 296
-Possible outlier detected: The Stripper by artist David Rose and His Orchestra at position 381
 Song Theme from Dr. Kildare (Three Stars Will Shine Tonight) by Richard Chamberlain at position 396 not found!
 Song The Cha-Cha-Cha by Bobby Rydell at position 431 not found!
 Possible outlier detected: Release Me by artist "Little Esther" Phillips at position 435
 Possible outlier detected: I Will Follow Him by artist Little Peggy March at position 469
 Possible outlier detected: Watermelon Man by artist Mongo Santamaría at position 475
 Possible outlier detected: The Reverend Mr. Black by artist The Kingston Trio at position 480
-Possible outlier detected: Memphis by artist Lonnie Mack at position 497
 Possible outlier detected: Wipe Out by artist The Surfaris at position 500
 Song (Down at) Papa Joe's by The Dixiebelles at position 541 not found!
 Possible outlier detected: Engine Engine Number 9 by artist Roger Miller at position 706
 Possible outlier detected: The Seventh Son by artist Johnny Rivers at position 712
+Possible outlier detected: 1/2/2003 by artist Len Barry at position 751
 Song Ballad of the Green Berets by S/Sgt. Barry Sadler at position 787 not found!
 Possible outlier detected: Land of a Thousand Dances by artist Wilson Pickett at position 847
 Possible outlier detected: Come on Down to My Boat by artist Every Mother's Son at position 943
@@ -41,13 +40,12 @@ Possible outlier detected: Express by artist B. T. Express at position 1710
 Possible outlier detected: Philadelphia Freedom by artist The Elton John Band at position 1715
 Possible outlier detected: The Hustle by artist Van McCoy & the Soul City Symphony at position 1741
 Possible outlier detected: Dynomite by artist Bazuka at position 1753
+Possible outlier detected: Working My Way Back to You (Forgive Me, Girl) by artist The Spinners at position 2143
 Song Believe It or Not (Theme from The Greatest American Hero) by Joey Scarbury at position 2253 not found!
-Possible outlier detected: After All (Love Theme from Chances Are) by artist Cher & Peter Cetera at position 3019
 Possible outlier detected: Power of Love/Love Power by artist Luther Vandross at position 3248
 Song Right Here/Human Nature" / "Downtown by SWV at position 3411 not found!
 Song How Do U Want It" / "California Love by 2Pac featuring K-Ci & JoJo / featuring Dr. Dre at position 3567 not found!
 Possible outlier detected: C'mon N' Ride It (The Train) by artist Quad City DJ's at position 3571
-Possible outlier detected: Been Around the World" / "It's All About the Benjamins by artist Puff Daddy featuring The Notorious B.I.G. and Mase at position 3644
 Possible outlier detected: No, No, No Part II by artist Destiny's Child featuring Wyclef Jean at position 3651
 Possible outlier detected: What's It Gonna Be?! by artist Busta Rhymes featuring Janet Jackson at position 3725
 Possible outlier detected: Lost in You by artist Chris Gaines at position 3754
